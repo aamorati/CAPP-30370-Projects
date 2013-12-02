@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Javascript 2</title>
+  <style>
+    html {margin:2em; font-family:Helvetica, Arial, sans-serif;}
+    h1 {margin:0;}
+    h2 {color:#369;}
+    .red {color:red;}
+  </style>
+</head>
+<body>
+  <header><h1>Javascript 2</h1></header>
+
+  <h2>Window (Browser Object)</h2>
+
+  <h3>Event</h3>
+  <button id="show_event">Show Event</button>
+  <script>
+  document.getElementById('show_event').addEventListener("click", function(e){
+    console.log(e, e.target, e.type);
+  });
+  </script>
+
+  <h3>History</h3>
+  <button id="go_back">Back</button>
+  <button id="go_forward">Forward</button>
+  <script>
+  document.getElementById('go_forward').addEventListener("click", function(){
+    window.history.forward();
+  });
+  document.getElementById('go_back').addEventListener("click", function(){
+    window.history.back();
+  });
+  </script>
+
+  <h3>Location</h3>
+  <input type="text" id="loc"><button id="go_loc">Go!</button>
+  <script>
+  document.getElementById('go_loc').addEventListener("click", function(){
+    var loc = document.getElementById('loc');
+    document.location = loc.value;
+  });
+  </script>
+
+  <h3>Status</h3>
+  <input type="text" id="status"><button id="set_status">Set Status</button><button id="get_status">Get Status</button>
+  <script>
+  document.getElementById('set_status').addEventListener("click", function(){
+    window.status = document.getElementById('status').value;
+  });
+  document.getElementById('get_status').addEventListener("click", function(){
+    alert(window.status);
+  });
+  </script>
+
+  <hr>
+
+  <h2>DOM</h2>
+  <h3>getElementsByTagName</h3>
+  <input type="text" id="tagname"><button id="get_tagname">Get Elements by Tag Name</button>
+  <script>
+  document.getElementById('get_tagname').addEventListener("click", function(){
+    var elementToSearch = document.getElementById('tagname').value;
+    var headersByTag = document.getElementsByTagName(elementToSearch);
+    console.log(headersByTag);
+    for(i = 0; i < headersByTag.length; i++){
+      console.log(headersByTag[i]);
+    }
+  });
+  </script>
+
+  <h3>querySelectorAll [<a href="http://caniuse.com/#search=querySelectorAll">Can I use</a>]</h3>
+  <input type="text" id="qsa"><button id="att_qsa">Get Elements by querySelectorAll</button>
+  <ul>
+    <li class="odd">One</li>
+    <li class="even">Two</li>
+    <li class="odd">Three</li>
+    <li class="even">Four</li>
+  </ul>
+  <script>
+  document.getElementById('att_qsa').addEventListener("click", function(){
+    var headersByAll = document.querySelectorAll(document.getElementById('qsa').value);
+    for(i = 0; i < headersByAll.length; i++){
+      console.log(headersByAll[i]);
+    }
+  });
+  </script>
+
+  <h3>getAttribute</h3>
+  <input type="text" id="attr" class="Foo" title="This is my title" placeholder="A place to get attributes"><button id="att_attr">Get Attributes</button>
+  <script>
+  document.getElementById('att_attr').addEventListener("click", function(){
+    var input = document.getElementById('attr');
+    console.log(input.getAttribute('type'));
+    console.log(input.getAttribute('placeholder'));
+    console.log(input.getAttribute('class'));
+    console.log(input.getAttribute('title'));
+  });
+  </script>
+
+  <hr>
+
+  <h2>Manipulating nodes</h2>
+
+  <h3>setAttribute</h3>
+  <img id="kitten" src="http://placekitten.com/g/300/200" title="A kitten" alt="A kitten"><br><button id="make_doge">Make it a doge</button>
+  <script>
+  document.getElementById('make_doge').addEventListener("click", function(){
+    var kitten = document.getElementById('kitten');
+    kitten.setAttribute('src', 'doge.jpg');
+    kitten.setAttribute('alt', 'A doge');
+    kitten.setAttribute('title', 'A doge');
+  });
+  </script>
+
+  <h3>innerHTML</h3>
+  <p id="inner">This is my paragraph of stuff.</p><br>
+  <input type="text" id="inner_text"><button id="inner_button">Update Text</button>
+  <script>
+  document.getElementById('inner_button').addEventListener("click", function(){
+    var newText = document.getElementById('inner_text').value;
+    document.getElementById('inner').innerHTML = newText;
+  });
+  </script>
+
+  <h3>style</h3>
+  <p id="to-style">This is my paragraph of stuff.</p><br>
+  <button id="style-bold">Make it BOLD!</button>
+  <button id="style-red">Make it RED!</button>
+  <button id="style-big">Make it BIG!</button>
+  <script>
+  var paragraph = document.getElementById('to-style');
+  document.getElementById('style-bold').addEventListener("click", function(){
+    paragraph.style.fontWeight = "bold"; // font-weight:bold
+  });
+  document.getElementById('style-red').addEventListener("click", function(){
+    paragraph.style.color = "red"; // color:red
+  });
+  document.getElementById('style-big').addEventListener("click", function(){
+    paragraph.style.fontSize = "34px"; // font-size:34px
+  });
+  </script>
+
+</body>
+</html>

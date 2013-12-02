@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery 3</title>
+  <style>
+    html {margin:2em; font-family:Helvetica, Arial, sans-serif;}
+    h1 {margin:0;}
+    h2 {color:#369;}
+    .red {color:red;}
+    .green {color:green;}
+    .blue {color:blue;}
+  </style>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+</head>
+<body>
+  <header><h1>jQuery 3</h1></header>
+
+  <section id="section1">
+    <h2>this</h2>
+    <button id="b1">Click Me</button>
+    <ul>
+      <li>Alpha</li>
+      <li>Beta</li>
+      <li>Gamma</li>
+    </ul>
+
+    <script>
+    $('#b1').on('click', function(){
+      console.log( this );
+      console.log( $(this) );
+      console.log( $(this).text() );
+    });
+
+    $('#section1').on('click', 'li', function(){
+      var $this = $(this);
+      console.log( $this.text() );
+    });
+    </script>
+
+  </section>
+
+  <hr>
+
+  <section id="section2">
+    <h2>Width/Height</h2>
+    <p>Get the width and height of an element.</p>
+    <button class="btn1">Get header Width/Height</button><br>
+    <button class="btn2">Get img Width/Height</button><br>
+    <button class="btn3">Get button Width/Height</button><br>
+    <img src="http://placekitten.com/g/300/250" alt="A Kitten">
+
+    <script>
+    section2 = $('#section2');
+
+    $(section2).on('click', '.btn1', function(){
+      console.log( 'Width: ' + section2.children('h2').width() );
+      console.log( 'Height: ' + section2.children('h2').height() );
+    });
+
+    $(section2).on('click', '.btn2', function(){
+      console.log( 'Width: ' + section2.children('img').width() );
+      console.log( 'Height: ' + section2.children('img').height() );
+    });
+
+    $(section2).on('click', '.btn3', function(){
+      console.log( 'Width: ' + $(this).width() );
+      console.log( 'Height: ' + $(this).height() );
+    });
+    </script>
+
+  </section>
+  <hr>
+
+  <section id="section3">
+    <h2>Offset</h2>
+    <p>Get the offset distance from the top and left of the browser window.</p>
+    <button>Console.log offset</button>
+
+    <script>
+    $('#section3').on('click', 'button', function(){
+      console.log('Offset: ', $('#section3').offset() );
+      console.log('Offset top: ' + $('#section3').offset().top );
+      console.log('Offset left: ' + $('#section3').offset().left );
+    });
+    </script>
+
+  </section>
+
+  <hr>
+
+  <section id="section4">
+    <h2>Scrolltop</h2>
+    <p>Get the distance the browser viewport has scrolled.</p>
+    <button>Console.log Scrolltop</button>
+
+    <script>
+    $('#section4').on('click', 'button', function(){
+      console.log( $(document).scrollTop() );
+    });
+    </script>
+
+  </section>
+
+  <hr>
+
+  <section id="section5">
+    <h2>Resize</h2>
+    <p>Do something when the target resizes.</p>
+
+    <script>
+
+    $(window).resize(function(){
+      //console.log( 'Width: ' + $(window).width() );
+      //console.log( 'Height: ' + $(window).height() );
+    });
+
+    </script>
+
+  </section>
+
+  <hr>
+
+  <section id="section6">
+    <h2>Classes</h2>
+    <p>This paragraph should have <b>red</b> text.</p>
+
+    <h3>Adding</h3>
+    <button class="b1">Make it Red</button>
+    <script>
+    var p = $('#section6').find('p');
+
+    $('.b1').on('click', function(){
+      p.addClass('red');
+    });
+    </script>
+
+    <h3>Removing</h3>
+    <button class="b2">Remove the color</button>
+    <script>
+    $('.b2').on('click', function(){
+      p.removeClass('red');
+    });
+    </script>
+
+    <h3>Toggling</h3>
+    <button class="b3">Toggle the color</button>
+    <script>
+    $('.b3').on('click', function(){
+      p.toggleClass('red');
+    });
+    </script>
+
+    <h3>Testing</h3>
+    <button class="b4">Is it red?</button>
+    <script>
+    $('.b4').on('click', function(){
+      alert( p.hasClass('red') );
+    });
+    </script>
+
+  </section>
+
+  <hr>
+
+  <section id="section7">
+    <h2>Prevent Default</h2>
+    <p>Prevents the default action of an element.</p>
+    <p><a href="http://marcomm.nd.edu">Marcomm Website</a></p>
+    <script>
+    $('#section7').on('click', 'a', function(e){
+      e.preventDefault();
+      alert( $(this).attr('href') );
+    });
+    </script>
+  </section>
+
+</body>
+</html>

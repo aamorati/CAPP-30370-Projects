@@ -1,0 +1,28 @@
+html {color:#ffffff; background-color:#0c610a; margin: 0 15%; 
+   font-family:"Courier New", courier, monospace; text-align:center;}
+
+hr {margin: 0 -10%;}
+   
+h1 {color:#40ff33; font-weight:bold; margin-top: 30px;}
+
+h2 {color:#40ff33;}
+
+table.center {margin-left:auto; margin-right:auto;}
+caption {color:#40ff33; font-weight:bold;}
+th, td {border-style:solid; border-width: 1px; border-color:#ccd4d9;}
+
+body {font-size:100%;}
+
+ol, ul {text-align:left;}
+
+.links {border-style:solid; border-width: 1px; border-color:#ccd4d9;}
+
+a:link {color:#ccd4d9;}
+a:visited {color:#80ff80;}
+a:hover{color:#ffffff}
+a:active:{color:#000000}
+a:focus{border: 1px solid white}
+
+blockquote {font-family:cursive;}
+
+footer {margin-bottom: 40px;}

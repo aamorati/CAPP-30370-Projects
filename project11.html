@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Project 10</title>
+<meta name="description" content="This project has a lot of boxes and they move">
+<style>
+	div {margin:1em;}
+	.box {
+		width:50%; 
+		height:300px; 
+		background-color:orange; 
+		box-shadow: 5px 5px 5px black;
+		-webkit-transition:all 0.3s ease-in-out;}
+	.one:hover {
+		background-color:black; 
+		box-shadow: 5px 5px 5px orange;}
+	.two:hover {
+		-webkit-transform:rotate(25deg) scale(1.05); 
+		-webkit-transform-origin:top right;}
+	
+	img {
+		margin:1em; 
+		max-width:50%; 
+		-webkit-transition: all 0.3s ease-in-out;
+		}
+	.first:hover {
+		-webkit-transform:rotate(180deg); 
+		}
+	.second:hover {
+		-webkit-transform:scale(1.5);}
+	.third:hover {
+		-webkit-transform:skewX(20deg);}
+</style>
+</head>
+
+<body>
+<h1>2spooky</h1>
+<img src="spook1.jpg" class="first">
+<img src="spook2.jpg" class="second">
+<img src="spook3.jpg" class="third">
+<div class="box one"></div>
+<div class="box two"></div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!doctype html>
+
+<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>It keeps happening</title>
+  <style>
+    html {margin:1em; font-family:Helvetica, Arial, sans-serif;}
+    h2 {clear:both;}
+    .box {width:200px; height:200px; border:1px solid #000; background-color:#ddd;}
+  </style>
+</head>
+
+<body>
+ <header><h1>Project 14</h1></header>
+ 
+  <h2>Source and Target</h2>
+  <h3>Source</h3>
+  <input type="text" id="text1" placeholder="Type here">
+  <h3>Target</h3>
+  <input type="text" id="text2" readonly="true" placeholder="Echo the result here">
+	<script>
+	/*Get the content from “Source” AS THE USER TYPES, and display 
+	it in “Target”*/
+	document.getElementById('text1').addEventListener("keyup", function ()
+	{var firstValue = document.getElementById('text1').value;
+	document.getElementById('text2').value = firstValue;
+	})
+	</script>
+
+  <hr>
+	
+  <h2>Image Swap</h2>
+  <img id="kitten" src="swiggity.jpg" title="A kitten" alt="A kitten"><br>
+  <input type="text" id="get_img" placeholder="Enter image url here"><button id="update_img">Update</button>
+	<script>
+	/*Get a new image value from the text box and use it to update 
+	the image */
+	document.getElementById('update_img').addEventListener("click", function()
+		{var imageUrl = document.getElementById('get_img');
+		var kitten = document.getElementById('kitten');
+		kitten.setAttribute('src', imageUrl.value)}
+		);
+	</script>
+
+  <hr>
+  
+  <h2>Font Sizer</h2>
+  <p id="to-style">This is my paragraph of stuff.</p><br>
+  <input type="text" id="font-size" placeholder="Enter a font size"> px <button id="font-button">Make it so</button>
+	<script>
+	/*Get a font-size value from the text box and use it to change 
+	the font-size of the associated paragraph*/
+	var paragraph = document.getElementById('to-style');
+	document.getElementById('font-button').addEventListener("click", function ()
+		{var setSize = document.getElementById('font-size')
+		//console.log(setSize.value);
+		paragraph.style.fontSize = setSize.value + "px";
+		});
+	</script>
+
+  <h2>Attribute Reporter</h2>
+  <img id="kitten2" src="http://placekitten.com/g/300/200" title="A kitten" alt="A kitten"><br>
+  <button id="get-attr">Log Attributes</button>
+	<script>
+	/*When the button is clicked, output the “src” and “alt” 
+	attributes to the console.*/
+	document.getElementById('get-attr').addEventListener("click", function()
+		{var kittenAttr = document.getElementById('kitten2')
+		console.log(kittenAttr.getAttribute('src'));
+		console.log(kittenAttr.getAttribute('alt'));
+		});
+	</script>
+
+  <h2>Element Counter</h2>
+  <input type="text" id="element-type" placeholder="Which element?"><br>
+  <button id="countButton">Count the Elements</button>
+  <input type="text" id="element-count" placeholder="Results here" readonly="true">
+	<script>
+	/*Get the user input for an element, id, class, or query 
+	and display how many exist on the page in the Results box*/
+	document.getElementById('countButton').addEventListener("click", function(){
+    var elementCount = document.querySelectorAll(document.getElementById('element-type').value);
+    document.getElementById('element-count').value = elementCount.length;
+    });
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!doctype html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Never again</title>
+	<meta name="description" content="Project 13">
+	
+	<style>
+	#box {width:200px; height:200px; background-color:gray; 
+	text-align:center; font-weight:bold;}
+	
+	</style>
+</head>
+
+<body>
+<h2>Item 1</h2>
+<button id="alert_button">Alert</button>
+	<script>
+	//A button labeled “Alert”, that when clicked, displays an “alert”
+	var alertButton = document.getElementById('alert_button');
+	alertButton.addEventListener("click", function() 
+		{alert("You clicked the button")});
+	</script>
+
+<h2>Item 2</h2>
+<button id="name_button">Prompt</button>
+	<script>
+	/*A button labeled “Prompt”, that when clicked, asks the users name 
+	and then outputs the name five times to the console */
+	var nameButton = document.getElementById('name_button');
+	nameButton.addEventListener("click", function()
+		{var nameInput = prompt("What is your name?")
+		for(i = 0; i < 5; i++) {
+		console.log(nameInput)
+		};
+	});
+	</script>
+
+<h2>Item 3</h2>
+	<script>
+	/* Create an array of the colors of the rainbow. Loop through the 
+	array writing each color to its own line in the document on page load. */
+	var rainbow = ['burgundy', 'bronze', 'yellow', 'lime', 'olive', 'jade', 'teal', 'cerulean', 'indigo', 'purple', 'violet', 'fuschia']
+	for (var i=0; i<rainbow.length; i++) {
+  document.write(rainbow[i]+ "<br />");
+}
+	</script>
+
+<h2>Item 4</h2>
+<div id="box">Mouse Events</div>
+	<script>
+	/*Create a box named “Mouse Events”. When the mouse moves over the 
+	box, write to the console: “Mouse entered the box”. When the mouse 
+	leaves, write to the console: “Mouse left the box”.*/
+	var mouseBox = document.getElementById('box');
+	mouseBox.addEventListener("mouseover", function(){
+		console.log('Mouse entered the box');});
+	mouseBox.addEventListener("mouseout", function(){
+		console.log('Mouse left the box');});
+	</script>
+
+<h2>Item 5</h2>
+<form>
+First: <input type="text" id="first"><br>
+Second: <input type="text" id="second">
+</form>
+<button id="check_button">Check</button>
+	<script>
+	/*Two text boxes labeled “First” and “Second” and a button labled 
+	“Check”. When the button is clicked, the user receives an alert 
+	letting them know ff the values in the two boxes are equal.*/
+	var firstValue = document.getElementById('first');
+	var secondValue = document.getElementById('second');
+	var checkButton = document.getElementById('check_button');
+	checkButton.addEventListener("click", function(){
+		if(firstValue.value == secondValue.value){
+		alert("They are the same");}
+		else {
+		alert("They are different");}
+	});
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+html {font-family:Verdana, Geneva, sans-serif; margin: 0 10%;}
+
+hr {margin: 0 10%;}
+
+h1, h2, h3, h4, h5, h6 {font-family:Georgia, serif; color:green;}
+h1, h2 {text-align:center;}
+h1 {text-shadow:1px 1px 0 black;}
+
+blockquote {background: #f9d6d6; /* Old browsers */
+background: -moz-linear-gradient(top, #f9d6d6 0%, #febbbb 14%, #fe9090 90%, #ff5c5c 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f9d6d6), color-stop(14%,#febbbb), color-stop(90%,#fe9090), color-stop(100%,#ff5c5c)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #f9d6d6 0%,#febbbb 14%,#fe9090 90%,#ff5c5c 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #f9d6d6 0%,#febbbb 14%,#fe9090 90%,#ff5c5c 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #f9d6d6 0%,#febbbb 14%,#fe9090 90%,#ff5c5c 100%); /* IE10+ */
+background: linear-gradient(to bottom, #f9d6d6 0%,#febbbb 14%,#fe9090 90%,#ff5c5c 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9d6d6', endColorstr='#ff5c5c',GradientType=0 ); /* IE6-9 */
+padding:1em;}
+
+img {float:right; margin:2em; border: 1px solid green; border-radius:15px; box-shadow:1px 1px 10px;}
+
+p {text-indent: 1.5em;}
+
+body {padding:50px; background: #fff0f0 url(treebkg.png) center;}
